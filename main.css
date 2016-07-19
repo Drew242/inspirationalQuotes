@@ -1,0 +1,17 @@
+body {
+  background-image: url('desk1.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.containContent {
+  position: fixed;
+  bottom: 0;
+  background-color: #FFF8DC;
+  text-align: center;
+  padding: 1%;
+  height: 70%;
+  max-height: 70%;
+  margin-bottom: 1%;
+  border-radius: 4px;
+}
