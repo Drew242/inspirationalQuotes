@@ -10,11 +10,17 @@
   <script src='main.js'></script>
 </head>
 
-<body class='container'>
+<body class='container-fluid'>
 
   <div class='col-lg-6 col-lg-offset-2 containContent' ng-controller="quoteCtrl as quote">
     <h1>{{ quote.banner }}</h1>
     <hr>
+      <ul class='quoteList'>
+        <li class='quoteItem' ng-repeat='q in quote.statics'>"{{ q.quote }}"<br> - <b>{{ q.author }}</b></li>
+      </ul>
+  </div>
+
+  <div class='col-lg-2'>
 
   </div>
 

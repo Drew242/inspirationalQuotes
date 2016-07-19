@@ -1,7 +1,10 @@
 body {
-  background-image: url('desk1.jpeg');
-  background-repeat: no-repeat;
+  background: url('desk1.jpeg') no-repeat left top;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-size: cover;
+  min-height: 50em;
+  font-family: monospace;
 }
 
 .containContent {
@@ -12,6 +15,25 @@ body {
   padding: 1%;
   height: 70%;
   max-height: 70%;
+  width: 50%;
+  min-width: 50%;
   margin-bottom: 1%;
   border-radius: 4px;
+  overflow: scroll;
+}
+
+.quoteList {
+  text-align: left;
+  list-style: none;
+}
+
+.quoteItem {
+  margin-bottom: 2%;
+}
+
+@media (max-width: 1000px) {
+  .containContent {
+    width: 90%;
+    min-width: 90%:
+  }
 }
