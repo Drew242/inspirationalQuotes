@@ -1,8 +1,26 @@
-console.log('quote time');
-angular.module('quoteApp', []);
+angular.module('quoteApp', ['ngRoute']);
 
-angular.module('quoteApp')
-  .controller('quoteCtrl', quoteCtrl);
+// Routes //
+
+angular.module('quoteApp').config(function($routeProvider) {
+    $routeProvider.when( '/', {
+      templateUrl: 'main.html'
+    });
+    $routeProvider.when( '/addQuote', {
+      templateUrl: 'addQuote.html'
+    })
+    $routeProvider.when( '/searchQuotes', {
+      templateUrl: 'searchQuotes.html'
+    })
+
+    // default route //
+    $routeProvider
+      .otherwise({
+        redirectTo: '/'
+      });
+});
+
+// Factory for static quotes //
 
 angular.module('quoteApp')
   .factory('staticQuotes', staticQuotes)
@@ -36,6 +54,11 @@ function staticQuotes() {
     getQuotes: quotes
   }
 }
+
+// Static Quotes Controller //
+
+angular.module('quoteApp')
+  .controller('quoteCtrl', quoteCtrl);
 
 function quoteCtrl(staticQuotes) {
   var quote = this;

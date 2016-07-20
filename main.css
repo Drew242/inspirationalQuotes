@@ -31,6 +31,20 @@ body {
   margin-bottom: 2%;
 }
 
+.addQuote {
+  margin-top: 7%;
+  border: 2px solid black;
+  background-color: transparent;
+  color: #000000;
+  padding: 1%;
+  font-size: 1.5em;
+}
+
+.addQuote:hover {
+  background-color: #000000;
+  color: #FFF8DC;
+}
+
 @media (max-width: 1000px) {
   .containContent {
     width: 90%;
