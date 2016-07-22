@@ -51,17 +51,30 @@ function staticQuotes() {
   ]
 
   return {
-    getQuotes: quotes
+    getQuotes: quotes,
+    createQuote: function createQuote(quote, author) {
+      this.quote = quote;
+      this.author = author;
+    }
   }
+
 }
 
 // Static Quotes Controller //
 
 angular.module('quoteApp')
-  .controller('quoteCtrl', quoteCtrl);
+  .controller('quoteCtrl', ['$location', 'staticQuotes', quoteCtrl]);
 
-function quoteCtrl(staticQuotes) {
+function quoteCtrl($location, staticQuotes) {
   var quote = this;
   quote.banner  = "Inspirational Quotes";
   quote.statics = staticQuotes.getQuotes;
+  quote.quote   = '';
+  quote.author  = '';
+
+  quote.addQuote = function(quote, author) {
+    var newQuote = new staticQuotes.createQuote(quote, author);
+    staticQuotes.getQuotes.push(newQuote);
+    $location.url('/');
+  }
 }

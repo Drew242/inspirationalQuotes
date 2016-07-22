@@ -36,11 +36,7 @@
   </nav>
 
   <div class='col-lg-6 col-lg-offset-2 containContent' ng-controller="quoteCtrl as quote" ng-view=''>
-    <h1>{{ quote.banner }}</h1>
-    <hr>
-    <ul class='quoteList'>
-      <li class='quoteItem' ng-repeat='q in quote.statics'>"{{ q.quote }}"<br> - <b>{{ q.author }}</b></li>
-    </ul>
+    
   </div>
 
   <div class='col-lg-2'>

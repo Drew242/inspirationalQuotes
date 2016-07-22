@@ -1,5 +1,7 @@
 <h1>{{ quote.banner }}</h1>
 <hr>
 <ul class='quoteList'>
-  <li class='quoteItem' ng-repeat='q in quote.statics'>"{{ q.quote }}"<br> - <b>{{ q.author }}</b></li>
+  <li class='quoteItem' ng-repeat='q in quote.statics'>
+    "{{ q.quote }}"<span class='pull-right'>x</span><br>- <b>{{ q.author }}</b>
+  </li>
 </ul>
