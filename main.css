@@ -19,6 +19,7 @@ body {
   min-width: 50%;
   margin-bottom: 1%;
   border-radius: 4px;
+  padding: 3%;
   overflow: scroll;
 }
 
@@ -43,6 +44,11 @@ body {
 .addQuote:hover {
   background-color: #000000;
   color: #FFF8DC;
+}
+
+.delete:hover {
+  color: red;
+  cursor: pointer;
 }
 
 @media (max-width: 1000px) {

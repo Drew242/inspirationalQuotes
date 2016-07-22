@@ -77,4 +77,8 @@ function quoteCtrl($location, staticQuotes) {
     staticQuotes.getQuotes.push(newQuote);
     $location.url('/');
   }
+
+  quote.deleteQuote = function(i) {
+    quote.statics.splice(i, 1);
+  }
 }
