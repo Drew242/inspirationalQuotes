@@ -1,0 +1,9 @@
+<h1>Random Quote</h1>
+<hr>
+<div class='container-fluid'>
+  <button class="btn btn-primary addQuote" ng-click='quote.randomQuote()'>Random Quote</button>
+</div>
+<div class='container-fluid' ng-show='quote.showQuote'>
+  <h2>"{{ quote.random.quote }}"</h2>
+  <h3> - {{ quote.random.author }}</h3>
+</div>

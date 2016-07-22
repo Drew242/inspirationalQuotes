@@ -9,8 +9,8 @@ angular.module('quoteApp').config(function($routeProvider) {
     $routeProvider.when( '/addQuote', {
       templateUrl: 'addQuote.html'
     })
-    $routeProvider.when( '/searchQuotes', {
-      templateUrl: 'searchQuotes.html'
+    $routeProvider.when( '/randomQuote', {
+      templateUrl: 'randomQuote.html'
     })
 
     // default route //
@@ -67,10 +67,11 @@ angular.module('quoteApp')
 
 function quoteCtrl($location, staticQuotes) {
   var quote = this;
-  quote.banner  = "Inspirational Quotes";
-  quote.statics = staticQuotes.getQuotes;
-  quote.quote   = '';
-  quote.author  = '';
+  quote.banner    = "Inspirational Quotes";
+  quote.statics   = staticQuotes.getQuotes;
+  quote.quote     = '';
+  quote.author    = '';
+  quote.showQuote = false;
 
   quote.addQuote = function(quote, author) {
     var newQuote = new staticQuotes.createQuote(quote, author);
@@ -80,5 +81,10 @@ function quoteCtrl($location, staticQuotes) {
 
   quote.deleteQuote = function(i) {
     quote.statics.splice(i, 1);
+  }
+
+  quote.randomQuote = function() {
+    quote.showQuote = true; 
+    quote.random = quote.statics[Math.floor(Math.random()*quote.statics.length)]
   }
 }

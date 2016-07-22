@@ -3,11 +3,11 @@
 <form>
   <fieldset class="form-group">
     <label for="quote">Quote</label>
-    <input type="text" class="form-control" id="quote" placeholder="Et tu, Brute?" ng-model='quote.quote'>
+    <input type="text" class="form-control" id="quote" placeholder="Et tu, Brute?" ng-model='quote.quote' required>
   </fieldset>
   <fieldset class="form-group">
     <label for="author">Author</label>
-    <input type="text" class="form-control" id="author" placeholder="Shakespeare" ng-model='quote.author'>
-    <button class="addQuote" class="btn btn-primary" ng-click='quote.addQuote(quote.quote, quote.author)'>Add Quote</button>
+    <input type="text" class="form-control" id="author" placeholder="Shakespeare" ng-model='quote.author' required>
+    <button class="btn btn-primary addQuote" ng-click='quote.addQuote(quote.quote, quote.author)'>Add Quote</button>
   </fieldset>
 </form>
